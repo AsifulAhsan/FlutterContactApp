@@ -42,9 +42,9 @@ Make sure you have the following installed:
 4.  Usage:
 Once the app is running, you can:
 
-   ##  Add a new contact by tapping the "ADD" button.
-   ##  View your contacts on the main screen.
-   ##  Delete a contact by tapping the "DELETE" button.
+   ##  1.Add a new contact by tapping the "ADD" button.
+   ##  2.View your contacts on the main screen.
+   ##  3.Delete a contact by tapping the "DELETE" button.
 
 6.  Contributing:
 If you'd like to contribute to this project, please follow the Contributing Guidelines.
