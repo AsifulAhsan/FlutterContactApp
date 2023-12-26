@@ -6,8 +6,8 @@ A simple Flutter application for managing contacts.
 - [Description](#description)
 - [Features](#features)
 - [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
@@ -42,9 +42,9 @@ Make sure you have the following installed:
 4.  Usage:
 Once the app is running, you can:
 
--.  Add a new contact by tapping the "ADD" button.
--.  View your contacts on the main screen.
--.  Delete a contact by tapping the "DELETE" button.
+#  Add a new contact by tapping the "ADD" button.
+#  View your contacts on the main screen.
+#  Delete a contact by tapping the "DELETE" button.
 
 6.  Contributing:
 If you'd like to contribute to this project, please follow the Contributing Guidelines.
