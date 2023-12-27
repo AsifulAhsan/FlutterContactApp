@@ -1,16 +1,53 @@
-# contact_book
+# Flutter Contact App
 
-A new Flutter project.
+A simple Flutter application for managing contacts.
 
-## Getting Started
+## Table of Contents
+- [Description](#description)
+- [Features](#features)
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
 
-This project is a starting point for a Flutter application.
+## Description
 
-A few resources to get you started if this is your first Flutter project:
+This Flutter app allows users to manage their contacts efficiently. It provides a user-friendly interface for adding, viewing, and deleting contacts.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Add new contacts with names and phone numbers.
+- View a list of contacts with their details.
+- Delete contacts from the list.
+
+### Prerequisites:
+
+Make sure you have the following installed:
+
+- [Flutter](https://flutter.dev/docs/get-started/install)
+
+### Installation:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/AsifulAhsan/FlutterContactApp.git
+
+2.  Navigate to the project directory:  `cd FlutterContactApp`
+
+3.  Run the app:  `flutter run`
+
+4.  Usage:
+Once the app is running, you can:
+
+   ##  - Add a new contact by tapping the "ADD" button.
+   ##  - View your contacts on the main screen.
+   ##  - Delete a contact by tapping the "DELETE" button.
+
+6.  Contributing:
+If you'd like to contribute to this project, please follow the Contributing Guidelines.
+
+7.  License:
+This project is licensed under the MIT License.
