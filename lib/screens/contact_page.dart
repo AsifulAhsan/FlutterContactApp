@@ -39,27 +39,32 @@ class _ContactPageState extends State<ContactPage> {
             'Delete Confirmation',
             style: TextStyle(fontSize: 18, color: Colors.redAccent),
           ),
-          content:
-              Text('Are you sure you want to delete contact (${index + 1}) ?'),
+          content: index == -1
+              ? const Text('Are you sure you want to delete all contacts?')
+              : const Text('Are you sure you want to delete this contact?'),
           actions: <Widget>[
             TextButton(
-              onPressed: () {
-                Navigator.of(context).pop(); //closes dialog
-              },
               child: const Text(
                 'Cancel',
                 style: TextStyle(fontSize: 16, color: Colors.grey),
               ),
-            ),
-            TextButton(
               onPressed: () {
-                _deleteContact(index); //deletes contact at index
                 Navigator.of(context).pop(); //closes dialog
               },
+            ),
+            TextButton(
               child: const Text(
                 'Delete',
                 style: TextStyle(fontSize: 16, color: Colors.deepOrangeAccent),
               ),
+              onPressed: () {
+                if (index == -1) {
+                  _deleteAllContact();
+                } else {
+                  _deleteContact(index); //deletes contact at index
+                }
+                Navigator.of(context).pop(); //closes dialog
+              },
             ),
           ],
         );
@@ -67,9 +72,15 @@ class _ContactPageState extends State<ContactPage> {
     );
   }
 
+  void _deleteAllContact(){
+    setState(() {
+      contacts.clear(); //removes all contacts
+    });
+  }
+
   void _deleteContact(int index) {
     setState(() {
-      contacts.removeAt(index);
+      contacts.removeAt(index); //removes contact at index
     });
   }
 
@@ -109,6 +120,9 @@ class _ContactPageState extends State<ContactPage> {
                   style: const TextStyle(color: Colors.green),
                 ),
                 trailing: const Icon(Icons.arrow_forward_sharp),
+                onLongPress: () {
+                  _deleteConfirm(index);
+                },
                 onTap: () {
                   //navigate to contactDetails
                   Navigator.push(
@@ -128,28 +142,29 @@ class _ContactPageState extends State<ContactPage> {
         },
       ),
       bottomNavigationBar: BottomAppBar(
+        color: Colors.indigoAccent,
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton.icon(
               onPressed: () {
                 //call func to navigate to AddContactScreen
                 _navigateToAddContactScreen(context);
               },
-              icon: const Icon(Icons.add, color: Colors.blueAccent),
+              icon: const Icon(Icons.add, color: Colors.blue),
               label: const Text(
                 'ADD',
-                style: TextStyle(color: Colors.blueAccent),
+                style: TextStyle(color: Colors.blue, fontSize: 12),
               ),
             ),
             ElevatedButton.icon(
               onPressed: () {
-                _deleteConfirm(0);
+                _deleteConfirm(-1);
               },
               icon: const Icon(Icons.delete_outline, color: Colors.redAccent),
               label: const Text(
-                'DELETE',
-                style: TextStyle(color: Colors.redAccent),
+                'DELETE ALL',
+                style: TextStyle(color: Colors.redAccent, fontSize: 12),
               ),
             ),
           ],
