@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:contact_book/data%20model/contact.dart';
 import 'package:contact_book/screens/add_contact_screen.dart';
 import 'package:contact_book/screens/contact_details.dart';
@@ -72,7 +74,7 @@ class _ContactPageState extends State<ContactPage> {
     );
   }
 
-  void _deleteAllContact(){
+  void _deleteAllContact() {
     setState(() {
       contacts.clear(); //removes all contacts
     });
@@ -88,6 +90,7 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.white),
         backgroundColor: Colors.indigoAccent,
         title: const Text(
           'Contacts',
