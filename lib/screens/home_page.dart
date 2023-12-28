@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
                 );
               },
               child: const Text(
-                'Dial',
+                'Search',
                 style: TextStyle(color: Colors.black, fontSize: 16),
               ),
             ),
