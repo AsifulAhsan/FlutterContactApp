@@ -8,10 +8,7 @@ class DialPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.indigo,
-        title: const Text(
-          'Dial',
-          style: TextStyle(color: Colors.white),
-        ),
+        title: const Text('Dial', style: TextStyle(color: Colors.white)),
         centerTitle: true,
       ),
       body: Container(
