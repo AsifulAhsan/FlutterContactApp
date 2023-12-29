@@ -1,4 +1,4 @@
-import 'package:contact_book/data%20model/contact.dart';
+import 'package:contact_book/data_model/contact.dart';
 import 'package:flutter/material.dart';
 
 class AddContactScreen extends StatefulWidget {
