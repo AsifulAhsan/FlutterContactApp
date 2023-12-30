@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:contact_book/data_model/contact.dart';
 import 'package:contact_book/screens/add_contact_screen.dart';
 import 'package:contact_book/screens/contact_details.dart';
@@ -90,77 +88,86 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
-        backgroundColor: Colors.indigoAccent,
+        shadowColor: Colors.grey,
+        backgroundColor: Colors.green,
+        elevation: 5,
         title: const Text(
           'Contacts',
-          style: TextStyle(color: Colors.white),
         ),
       ),
-      body: ListView.builder(
-        itemCount: contacts.length,
-        itemBuilder: (context, index) {
-          if (index < contacts.length) {
-            final contact = contacts[index];
-            return Card(
-              color: Colors.white70,
-              elevation: 5,
-              margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: Colors.indigoAccent,
-                  child: Text(
-                    contact.name.isNotEmpty ? contact.name[0] : '',
-                    style: const TextStyle(color: Colors.white),
-                  ),
-                ),
-                title: Text(
-                  contact.name,
-                  style: const TextStyle(fontSize: 15),
-                ),
-                subtitle: Text(
-                  contact.phoneNum,
-                  style: const TextStyle(color: Colors.green),
-                ),
-                trailing: const Icon(Icons.arrow_forward_sharp),
-                onLongPress: () {
-                  _deleteConfirm(index);
-                },
-                onTap: () {
-                  //navigate to contactDetails
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ContactDetails(
-                        contact: contact,
-                      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ListView.builder(
+          itemCount: contacts.length,
+          itemBuilder: (context, index) {
+            if (index < contacts.length) {
+              final contact = contacts[index];
+              return Card(
+                color: Colors.white70,
+                elevation: 5,
+                margin: const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: Colors.green,
+                    child: Text(
+                      contact.name.isNotEmpty ? contact.name[0] : '',
+                      style: const TextStyle(color: Colors.white),
                     ),
-                  );
-                },
-              ),
-            );
-          } else {
-            return const SizedBox.shrink();
-          }
-        },
+                  ),
+                  title: Text(
+                    contact.name,
+                    style: const TextStyle(fontSize: 15),
+                  ),
+                  subtitle: Text(
+                    contact.phoneNum,
+                    style: const TextStyle(color: Colors.green),
+                  ),
+                  trailing: const Icon(Icons.arrow_forward_sharp),
+                  onLongPress: () {
+                    _deleteConfirm(index);
+                  },
+                  onTap: () {
+                    //navigate to contactDetails
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ContactDetails(
+                          contact: contact,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              );
+            } else {
+              return const SizedBox.shrink();
+            }
+          },
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.indigoAccent,
+        color: Colors.green,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             ElevatedButton.icon(
+              style: const ButtonStyle(
+                  elevation: MaterialStatePropertyAll(6),
+                  shadowColor: MaterialStatePropertyAll(Colors.black)),
               onPressed: () {
                 //call func to navigate to AddContactScreen
                 _navigateToAddContactScreen(context);
               },
-              icon: const Icon(Icons.add, color: Colors.blue),
+              icon: const Icon(Icons.add, color: Colors.green),
               label: const Text(
                 'ADD',
-                style: TextStyle(color: Colors.blue, fontSize: 12),
+                style: TextStyle(color: Colors.green, fontSize: 12),
               ),
             ),
             ElevatedButton.icon(
+              style: const ButtonStyle(
+                  elevation: MaterialStatePropertyAll(6),
+                  shadowColor: MaterialStatePropertyAll(Colors.black)),
               onPressed: () {
                 _deleteConfirm(-1);
               },
