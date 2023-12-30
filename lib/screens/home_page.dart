@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:contact_book/screens/contact_page.dart';
 import 'package:contact_book/screens/dial_page.dart';
 import 'package:flutter/material.dart';
@@ -45,36 +43,36 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             ElevatedButton(
-              style: ButtonStyle(
+              style: const ButtonStyle(
                   elevation: MaterialStatePropertyAll(6),
                   shadowColor: MaterialStatePropertyAll(Colors.black)),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => DialPage(),
+                    builder: (context) => const DialPage(),
                   ),
                 );
               },
-              child: Text(
+              child: const Text(
                 'Search',
                 style: TextStyle(color: Colors.black, fontSize: 16),
               ),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             ElevatedButton(
-              style: ButtonStyle(
+              style: const ButtonStyle(
                   elevation: MaterialStatePropertyAll(6),
                   shadowColor: MaterialStatePropertyAll(Colors.black)),
               onPressed: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ContactPage(),
+                    builder: (context) => const ContactPage(),
                   ),
                 );
               },
-              child: Text(
+              child: const Text(
                 'Contacts',
                 style: TextStyle(color: Colors.black, fontSize: 16),
               ),
