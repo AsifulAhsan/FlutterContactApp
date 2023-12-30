@@ -10,8 +10,14 @@ class DialPage extends StatefulWidget {
 
 class _DialPageState extends State<DialPage> {
   static List<Contact> contacts = [
-    const Contact(name: 'John Doe', phoneNum: '123-456-7890'),
-    const Contact(name: 'Jane Doe', phoneNum: '098-765-4321'),
+    const Contact(name: "John Doe", phoneNum: "1234567890"),
+    const Contact(name: "Micheal Doe", phoneNum: "0987654321"),
+    const Contact(name: "Bob Doe", phoneNum: "1234567890"),
+    const Contact(name: "Robert Doe", phoneNum: "0987654321"),
+    const Contact(name: "Alex Doe", phoneNum: "1234567890"),
+    const Contact(name: "Jack Doe", phoneNum: "0987654321"),
+    const Contact(name: "Jason Doe", phoneNum: "1234567890"),
+    const Contact(name: "Patrick Doe", phoneNum: "0987654321"),
   ];
 
   List<Contact> displayList = List.from(contacts);
@@ -69,11 +75,20 @@ class _DialPageState extends State<DialPage> {
                   : ListView.builder(
                       itemCount: displayList.length,
                       itemBuilder: (context, index) => ListTile(
+                        contentPadding: const EdgeInsets.all(8),
                         title: Text(
                           displayList[index].name,
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontSize: 14,
+                          ),
                         ),
                         subtitle: Text(
                           displayList[index].phoneNum,
+                          style: const TextStyle(
+                            color: Colors.green,
+                            fontSize: 14,
+                          ),
                         ),
                       ),
                     ),

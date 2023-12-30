@@ -12,8 +12,14 @@ class ContactPage extends StatefulWidget {
 
 class _ContactPageState extends State<ContactPage> {
   final List<Contact> contacts = [
-    const Contact(name: 'John Doe', phoneNum: '123-456-7890'),
-    const Contact(name: 'Jane Doe', phoneNum: '098-765-4321'),
+    const Contact(name: "John Doe", phoneNum: "1234567890"),
+    const Contact(name: "Micheal Doe", phoneNum: "0987654321"),
+    const Contact(name: "Bob Doe", phoneNum: "1234567890"),
+    const Contact(name: "Robert Doe", phoneNum: "0987654321"),
+    const Contact(name: "Alex Doe", phoneNum: "1234567890"),
+    const Contact(name: "Jack Doe", phoneNum: "0987654321"),
+    const Contact(name: "Jason Doe", phoneNum: "1234567890"),
+    const Contact(name: "Patrick Doe", phoneNum: "0987654321"),
   ];
 
   Future<void> _navigateToAddContactScreen(BuildContext context) async {
